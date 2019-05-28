@@ -23,9 +23,10 @@
 					let oMenu = document.querySelector("#myMenu");
 					let oMenuUp = document.querySelector(".menu-up");
 					let oMenuDown = document.querySelector(".menu-down");
+					let tips = document.querySelector(".tips");
 					new fullpage('#fullpage', {
 						verticalCentered: false,
-						// sectionsColor: ['#f00', '#0f0', '#00f', 'red', '#0ff', '#f0f', '#000'],
+						sectionsColor: ['#f00', '#0f0', '#00f', 'red', '#0ff', '#f0f', '#000'],
 						anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'sixthPage'],
 						menu: '#myMenu',
 						onLeave: function(origin, destination, direction) {
@@ -50,8 +51,15 @@
 							}
 							// 4.初始化第四屏动画
 							initSection4Animation();
+							// 最后一屏幕
+							if (destination.isLast) {
+								tips.style.display = "none";
+							}else{
+								tips.style.display = "block";
+							}
 
 						},
+						
 
 
 					})
@@ -159,10 +167,12 @@
 				</a></li>
 			<li class="menu-down"></li>
 		</ul>
-
+			<div class="tips">
+				
+			</div>
 		<div id="fullpage">
 			<div class="section section-one">
-				<video autoplay loop>
+				<video autoplay loop data-autoplay>
 					<source data-src="img/one.mp4" type="video/mp4" />
 				</video>
 				<div class="play">
@@ -175,7 +185,7 @@
 
 
 			<div class="section section-two">
-				<video autoplay loop>
+				<video autoplay loop data-autoplay>
 					<source data-src="img/two.mp4" type="video/mp4" />
 				</video>
 				<div class="info">
@@ -189,7 +199,7 @@
 				</div>
 			</div>
 			<div class="section section-three">
-				<video data-autoplay loop>
+				<video data-autoplay loop >
 					<source data-src="img/three.mp4" type="video/mp4" />
 				</video>
 				<div class="info">
@@ -231,9 +241,80 @@
 					<p>善于利用不同的地形埋伏和躲避，才能取得胜利</p>
 				</div>
 			</div>
-			<div class="section">5</div>
-			<div class="section">6</div>
-			<div class="section fp-auto-height">7</div>
+			<div class="section section-five">
+				  <video data-autoplay loop>
+            <source data-src="img/five.mp4" type="video/mp4" />
+        </video>
+		   <div class="info">
+            <div></div>
+            <div></div>
+            <p>丰富载具，团队合作，好友开黑</p>
+        </div>
+        <div class="ripple">
+            <span>+</span>
+            <b></b>
+            <b></b>
+        </div>
+			</div>
+			<div class="section section-six">
+				  <div class="one">
+            <div class="ripple">
+                <span>+</span>
+                <b></b>
+                <b></b>
+            </div>
+            <video autoplay loop data-autoplay>
+                <source data-src="img/section6-video1.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="two">
+            <div class="ripple">
+                <span>+</span>
+                <b></b>
+                <b></b>
+            </div>
+            <video autoplay loop data-autoplay>
+                <source data-src="img/section6-video2.mp4" type="video/mp4" />
+            </video>
+        </div>
+			</div>
+			<div class="section fp-auto-height">
+				  <div class="footer-in clearfix">
+            <div class="footer-left fl">
+                <a href="#"></a>
+                <span></span>
+            </div>
+            <div class="footer-right fl">
+                <p>
+                    <a href="#">腾讯互动娱乐</a>
+                    |
+                    <a href="#">服务条款</a>
+                    |
+                    <a href="#">腾讯游戏隐私保护指引</a>
+                    |
+                    <a href="#">腾讯游戏招聘</a>
+                    |
+                    <a href="#">腾讯游戏客服</a>
+                    |
+                    <a href="#">游戏地图</a>
+                    |
+                    <a href="#">商务合作</a>
+                    |
+                    <a href="#">腾讯网</a>
+                    |
+                    <a href="#">网站导航</a>
+                </p>
+                <p><a href="#">腾讯公司版权所有</a></p>
+                <p>COPYRIGHT © 1998 - 2019 TENCENT. ALL RIGHTS RESERVED.</p>
+                <p>©PUBG Corporation. All rights reserved.</p>
+                <p>
+                    <a href="#">粤网文[2017]6138-1456号</a>
+                    |
+                    <a href="#">（总）网出证（粤）字第057号</a>
+                </p>
+            </div>
+        </div>
+			</div>
 		</div>
 
 	</body>
